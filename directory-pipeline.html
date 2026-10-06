@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automated directory and email marketing pipeline for unclaimed events, Rose Villanueva</title>
+<meta name="description" content="A pipeline that turns scraped event listings into a published directory, then runs an email sequence inviting each organizer to claim their listing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">Automated directory and email marketing pipeline for unclaimed events</h1>
+    <div class="paper-meta"><span>Classification &rarr; Enrichment &rarr; Email validation &rarr; Email search &rarr; Contact research &rarr; Directory push &rarr; Sync &rarr; Outreach</span></div>
+    <h2>Stack</h2>
+    <div class="chips stack-row"><span class="chip">Browse AI</span><span class="chip">Airtable</span><span class="chip">Google Apps Script</span><span class="chip">Claude API</span><span class="chip">NeverBounce</span><span class="chip">Pexels</span><span class="chip">Pixabay</span><span class="chip">Brilliant Directories</span><span class="chip">Directorist</span><span class="chip">WordPress REST API</span><span class="chip">Gmail</span></div>
+    <p>
+      A pipeline that turns scraped event listings into a published directory, then contacts the
+      organizers behind them. Events arrive in Airtable from a scraper, are sorted by type, and
+      have their description, photo, contact details and social links filled in. Organizer email
+      addresses are checked against a verification service, with repeat searches when one fails.
+      Finished listings publish to the directory unclaimed, and a four-step email sequence invites
+      each organizer to claim theirs.
+    </p>
+    <figure class="fig"><svg viewBox="0 0 600 240" role="img" aria-label="Browse AI scrapes events into Airtable, where each record is queued by status. Claude classifies it, then writes a description and finds the organizer's social pages, with a photo pulled from Pexels or Pixabay. NeverBounce verifies the organizer email. A bad result sends it back to Claude for up to three broader searches before re-verifying. A verified record publishes to Brilliant Directories as an unclaimed listing, and Brevo sends the claim sequence on days 1, 3, 7 and 14."><defs><marker id="sysv" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="16" y="14" width="104" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="68.0" y="29" fill="var(--text-strong)">Browse AI</text><text x="68.0" y="41" fill="var(--text-dim)" font-size="8.5">scrape events</text><rect x="160" y="14" width="112" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="216.0" y="29" fill="var(--text-strong)">Airtable</text><text x="216.0" y="41" fill="var(--text-dim)" font-size="8.5">queue by status</text><rect x="312" y="14" width="112" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="368.0" y="29" fill="var(--text-strong)">Claude</text><text x="368.0" y="41" fill="var(--text-dim)" font-size="8.5">classify, flag</text><path d="M120 32 H156" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><path d="M272 32 H308" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><path d="M368 50 V92" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><rect x="312" y="96" width="140" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="382.0" y="111" fill="var(--text-strong)">Claude</text><text x="382.0" y="123" fill="var(--text-dim)" font-size="8.5">describe, find socials</text><rect x="168" y="96" width="116" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="226.0" y="111" fill="var(--text-strong)">NeverBounce</text><text x="226.0" y="123" fill="var(--text-dim)" font-size="8.5">verify email</text><rect x="16" y="96" width="116" height="36" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="74.0" y="111" fill="var(--text-strong)">Claude</text><text x="74.0" y="123" fill="var(--text-dim)" font-size="8.5">search again</text><path d="M312 114 H288" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><path d="M168 114 H136" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><text x="300" y="108" fill="var(--text-dim)" font-size="8.5" text-anchor="middle">then</text><text x="152" y="108" fill="var(--text-dim)" font-size="8.5" text-anchor="middle">bad</text><rect x="468" y="96" width="116" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="526.0" y="111" fill="var(--text-strong)">Pexels, Pixabay</text><text x="526.0" y="123" fill="var(--text-dim)" font-size="8.5">find photo</text><path d="M452 114 H464" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><path d="M74 132 V150 H226 V136" fill="none" stroke="var(--text-dim)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#sysv)"/><text x="150" y="146" fill="var(--text-dim)" font-size="8.5" text-anchor="middle">3 tries</text><path d="M252 132 V186" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/><text x="268" y="152" fill="var(--text-dim)" font-size="8.5" text-anchor="start">valid</text><rect x="160" y="190" width="176" height="36" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="248.0" y="205" fill="var(--text-strong)">Brilliant Directories</text><text x="248.0" y="217" fill="var(--text-dim)" font-size="8.5">publish unclaimed</text><rect x="372" y="190" width="168" height="36" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="456.0" y="205" fill="var(--text-strong)">Brevo</text><text x="456.0" y="217" fill="var(--text-dim)" font-size="8.5">claim emails, day 1 3 7 14</text><path d="M336 208 H368" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#sysv)"/></g></svg></figure>
+    <h2>Project scope</h2>
+    <p>
+      An events directory had to be populated before it had members. The approach was to build the
+      listings first from scraped public sources, publish them unclaimed, then contact each
+      organizer and invite them to claim the listing and choose a plan. Two halves, joined: the
+      directory build, and the email sequence that turns an unclaimed listing into a claimed one.
+    </p>
+    <p>
+      Eight scheduled jobs carry a record from scraped row to claimed listing, each one responsible
+      for a single stage.
+    </p>
+
+    <h2>Constraints</h2>
+    <p>
+      No server. Everything runs in Google Apps Script on scheduled triggers, so each stage has to
+      finish inside an execution limit and hold its own state between runs.
+    </p>
+    <p>
+      The hosted directory platform owns the page templates, so listing structure had to be
+      expressed through its own post types and fields rather than in code.
+    </p>
+    <p>
+      Model output is plausible by construction. A fabricated contact address is indistinguishable
+      from a real one by inspection. The audience is small event organizers on custom domains, which
+      frequently return inconclusive verification results rather than a clean yes or no.
+    </p>
+    <p>
+      Enrichment is slow and billed per record. It rewrites the description and photo on every run,
+      at roughly 15 seconds per record, so re-running it to fix one field would overwrite good
+      content and spend credits doing it.
+    </p>
+
+    <h2>Approach</h2>
+    <p>
+      One job per stage, each reading a database view that holds only the records at that stage. A
+      status field on the record is the state. Adding a stage means adding a status value and a
+      filtered view, not rewriting the pipeline. A stage that fails leaves the record where it is,
+      so the next run picks it up rather than losing it.
+    </p>
+    <p>
+      Treat the model as a source of candidates, not facts. Anything it supplies that will be acted
+      on externally, which here means a contact address, has to be confirmed by something outside
+      the model before it counts.
+    </p>
+    <p>
+      Intervals follow cost. A single cheap call can run every few minutes. A slow billed stage runs
+      hourly.
+    </p>
+
+    <h2>Implementation</h2>
+
+    <h3>The stages</h3>
+    <table class="stages">
+      <thead><tr><th>Job</th><th>Reads</th><th>Does</th><th>App</th></tr></thead>
+      <tbody>
+        <tr><td>Classification</td><td>Scraped data</td><td>Sets listing type and filter flag, cleans fields</td><td>Claude</td></tr>
+        <tr><td>Enrichment</td><td>Ready for enrichment</td><td>Writes description, finds photo, researches contact</td><td>Claude, Pexels, Pixabay</td></tr>
+        <tr><td>Address validation</td><td>Email validation</td><td>Verifies the organizer address</td><td>NeverBounce</td></tr>
+        <tr><td>Address search</td><td>Retry email search</td><td>One broader search attempt per run</td><td>Claude, NeverBounce</td></tr>
+        <tr><td>Contact research</td><td>Ready for social research</td><td>Finds Facebook, Instagram and LinkedIn pages</td><td>Claude</td></tr>
+        <tr><td>Directory push</td><td>Enriched</td><td>Creates the listing, uploads the image, writes meta</td><td>Brilliant Directories</td></tr>
+        <tr><td>Sync</td><td>Published listings</td><td>Reconciles published listings against the database</td><td>Brilliant Directories</td></tr>
+        <tr><td>Outreach</td><td>Published, claimable</td><td>Sends the claim sequence</td><td>Brevo</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Building the listing</h3>
+    <p>
+      Classification is deliberately cheap and does nothing else: listing type, a filter flag for
+      relevance, and basic field cleanup. Enrichment then writes the description, pulls a photo from
+      a stock image API, and researches the organizer. Contact research is a separate job again, and
+      it writes social links only. It is explicitly barred from writing the contact name or address,
+      because those belong to enrichment and two jobs writing the same field is how records end up
+      inconsistent.
+    </p>
+    <p>
+      On the directory side the listings are modeled as three separate post types rather than one
+      type with categories. The single type was tried first and abandoned, because categories cannot
+      be access-restricted per membership plan, which the claim and upgrade flow depends on.
+    </p>
+
+    <h3>The verification gate</h3>
+    <p>
+      Every candidate address is checked against a verification service before it can advance. Only
+      a valid result passes. <code>invalid</code>, <code>disposable</code>, <code>unknown</code> and
+      <code>accept_all</code> are all treated as failures.
+    </p>
+    <p>
+      Rejecting <code>accept_all</code> was the call that mattered. An accept_all domain
+      acknowledges every address whether the mailbox exists or not, and this audience produces a lot
+      of them. Passing them through would have shown a much higher success rate while reintroducing
+      the exact failure it was built to prevent. Unconfirmed is treated as failed, not as probably
+      fine.
+    </p>
+    <p>
+      A verification error is different from a verification failure. If the service itself errors,
+      the address is left in place and the record goes to human review rather than being cleared.
+    </p>
+
+    <h3>The retry ladder</h3>
+    <p>
+      A failed address is cleared rather than kept, and the record enters a search loop with up to
+      three attempts, each broader than the last. Attempt one is whatever enrichment originally
+      found. Attempt two is a wide search on the event name with contact terms. Attempt three
+      targets the named organizer and tries common address patterns on the event domain. Every
+      attempt is re-verified through the same gate.
+    </p>
+    <p>
+      An attempt counter on the record bounds the loop, and the third failure routes to human review
+      rather than looping forever.
+    </p>
+
+    <h3>The claim sequence</h3>
+    <p>
+      Listings publish unclaimed, on a free plan, each carrying a claim link. The sequence then
+      sends on days 1, 3, 7 and 14, with a different message each time. Before choosing a greeting
+      it checks whether the address is a generic inbox rather than a person, because addressing an
+      info@ address by first name is worse than not addressing it at all. Messages were composed as
+      drafts first, so the send step could be reviewed before it was armed.
+    </p>
+
+    <h3>Alternatives I ruled out</h3>
+    <ul>
+      <li><strong>Resetting records to re-run enrichment.</strong> The simplest way to re-check the
+        backlog, and it would have overwritten every existing description and photo. Rejected in
+        favor of a separate validation job.</li>
+      <li><strong>One combined validate-and-search function.</strong> Rejected because the two tasks
+        have different speeds and different counter logic, and combining them lets the slow one
+        block the fast one.</li>
+      <li><strong>A single listing post type with categories.</strong> Rejected because per-plan
+        access control is applied to post types, not categories, and the claim flow sells access.</li>
+    </ul>
+
+    <h2>Result</h2>
+    <p>
+      Five jobs run automatically. A scraped row becomes a classified, described, illustrated listing
+      with a verified organizer address and social links, without anyone touching it.
+    </p>
+    <p>
+      The gate and both failure paths were checked against live records before the triggers were
+      enabled. A validation run promoted two confirmed records in 17 seconds with no errors. A
+      search run found and confirmed one record on the first retry; the second returned an
+      inconclusive result, which correctly cleared the address, incremented the counter, and held
+      the record in the retry queue rather than promoting it.
+    </p>
+    <p>
+      An unverified address can no longer reach a send. That failure is structurally unreachable now
+      rather than avoided by care.
+    </p>
+
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPS track verification and gap detection, Rose Villanueva</title>
+<meta name="description" content="A reusable tool that takes a swimmer's actual GPS track after a swim and renders what was really swum, including the gaps where no swimming was recorded. Used for evidence review during ratification.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">GPS track verification and gap detection</h1>
+    <div class="links-row">
+      <a class="lnk demo" href="https://rosevillanuevadev.github.io/Ross-Edgley-Swim-Map/Ross-Edgley-Swim-final-map.html" target="_blank" rel="noopener">Live map</a>
+      <a class="lnk repo" href="https://github.com/rosevillanuevadev/Ross-Edgley-Swim-Map" target="_blank" rel="noopener">Repository</a>
+      <a class="lnk demo" href="https://rosevillanuevadev.github.io/straight-line-distance-map/SWIM-1029.html" target="_blank" rel="noopener">Straight-line comparison</a>
+    </div>
+    <div class="paper-meta"><span>JavaScript, GPX</span><span>Reusable, four swims</span></div>
+    <p>A reusable tool that takes a swimmer's actual GPS track after a swim and renders what was really swum, including the gaps where no swimming was recorded. Used for evidence review during ratification.</p>
+    <figure class="fig"><svg viewBox="0 0 600 132" role="img" aria-label="Swimmer GPX is parsed, matched by position, gaps excluded, and rendered as a route map."><defs><marker id="g1" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="14" y="48" width="96" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="62.0" y="69.5" fill="var(--text-strong)">swimmer GPX</text><path d="M112 66 H150" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g1)"/><rect x="154" y="48" width="104" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="206.0" y="64.0" fill="var(--text-strong)">parse legs</text><text x="206.0" y="77.0" fill="var(--text-dim)" font-size="8.5">by position</text><path d="M260 66 H298" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g1)"/><polygon points="314,46 412,46 424,66.0 412,86 314,86 302,66.0" fill="none" stroke="var(--violet)" stroke-width="1.6"/><text x="363.0" y="69.5" fill="var(--text-strong)">gap > 300m</text><path d="M426 58 H470" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g1)"/><path d="M426 78 H470" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g1)"/><rect x="474" y="30" width="112" height="30" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="530.0" y="48.5" fill="var(--text-strong)">exclude</text><rect x="474" y="74" width="112" height="30" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="530.0" y="92.5" fill="var(--text-strong)">count</text><path d="M530 106 V118 H300 V90" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g1)"/><rect x="240" y="90" width="120" height="0" rx="6" fill="none" stroke="var(--text-dim)" stroke-width="1.4"/><text x="300.0" y="93.5" fill="var(--text-strong)"></text></g></svg></figure>
+    <h2>Project scope</h2>
+    <p>
+      A completed swim arrives as a set of GPX files, one per leg. For a multi-day attempt
+      that can be dozens of files. Verifying the swim means answering one question: does the
+      recorded track support the claimed distance?
+    </p>
+    <p>
+      Summing the files does not answer it. The support boat moves between sessions, so the
+      raw total includes transit the swimmer never swam. And the files do not arrive in the
+      order the legs happened.
+    </p>
+    <h2>Constraints</h2>
+    <ul>
+      <li>Works from whatever the swimmer supplies. No control over file naming, ordering or device.</li>
+      <li>Any exclusion has to be defensible to the swimmer, with coordinates, not just a smaller number.</li>
+      <li>Reusable across swims rather than rebuilt per applicant.</li>
+    </ul>
+    <h2>Approach</h2>
+    <ol>
+      <li>Match legs by actual GPS position rather than filename order, since filenames are unreliable.</li>
+      <li>Treat a discontinuity above a distance threshold as unrecorded, not as swum.</li>
+      <li>Render the whole track so the reviewer sees the shape, not only the total.</li>
+      <li>Report every exclusion with its coordinates so the swimmer can respond to specifics.</li>
+    </ol>
+    <h2>Implementation</h2>
+    <h3>Position matching</h3>
+    <p>
+      Legs are ordered by where they physically start and end rather than by file order. On
+      one route, ordering by filename produced 24 apparent discontinuities. Ordering by
+      position reduced that to 9. The other 15 were an artifact of how the files happened to
+      be named.
+    </p>
+    <h3>Gap threshold</h3>
+    <p>
+      A separation above 300 meters between the end of one leg and the start of the next is
+      treated as a gap, excluded from the total, and reported. Below that it is treated as
+      GPS drift.
+    </p>
+    <h3>Applied per swim</h3>
+    <p>
+      Deployed for individual swims as a standalone page per attempt, so the reviewer and the
+      swimmer are looking at the same rendering. The most visible application was a
+      high-profile long distance swim in 2025.
+    </p>
+    <h2>Result</h2>
+    <ul>
+      <li>Distance claims are checked against the track rather than accepted from a summary.</li>
+      <li>Exclusions come with coordinates, so a swimmer can contest a specific gap rather than a number.</li>
+      <li>One tool applied across four swims instead of a fresh build each time.</li>
+    </ul>
+    <h2>Stack</h2>
+    <div class="chips"><span class="chip">JavaScript</span><span class="chip">GPX parsing</span><span class="chip">Leaflet</span><span class="chip">HTML</span><span class="chip">Git</span></div>
+
+  </main>
+</div>
+</body>
+</html>

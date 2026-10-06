@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM study assistant built on Claude, with Drive and Notion sync, Rose Villanueva</title><meta name="description" content="A browser-based LLM study assistant built on Claude. Files sync to the user's own Google Drive and structured records to their own Notion, through a proxy that holds the only secret the browser must never see.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084"></head><body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">LLM study assistant built on Claude, with Drive and Notion sync</h1>
+    <div class="paper-meta"><span>Study sessions run on Claude &rarr; files to Google Drive &rarr; sessions logged to Notion</span></div>
+    <div class="links-row">
+      <a class="lnk live" href="https://rosevillanuevadev.github.io/dm-study-agent" target="_blank" rel="noopener">Live app</a>
+      <a class="lnk repo" href="https://github.com/rosevillanuevadev/dm-study-agent" target="_blank" rel="noopener">Repository</a>
+    </div>
+    <h2>Stack</h2>
+    <div class="chips stack-row"><span class="chip">JavaScript</span><span class="chip">Anthropic Messages API</span><span class="chip">Server-sent events</span><span class="chip">Cloudflare Workers</span><span class="chip">Google Drive API v3</span><span class="chip">OAuth 2.0</span><span class="chip">Notion API</span><span class="chip">localStorage</span><span class="chip">GitHub Pages</span></div>
+    <p>A browser-only application that streams from a model API, syncs files to the user's own cloud storage, and writes structured records to their own workspace through a proxy that holds the only secret the browser must never see. One HTML file, no build step, no backend of its own.</p>
+    <figure class="shot"><img src="shots/dm-study-agent-dashboard.jpg" alt="Dashboard. Topic progress, streak and the thirteen study modes, each p" loading="lazy"><figcaption>Dashboard. Topic progress, streak and the thirteen study modes, each pre-filling the message box with a template plus one-tap starters.</figcaption></figure>
+
+    <h2>Project scope</h2>
+    <p>
+      A conversational tutor that keeps a durable record: what was covered, how it went, and
+      what needs review. That means three integrations, each with a different auth model, from
+      a page with no server behind it.
+    </p>
+    <h2>Constraints</h2>
+    <p>
+      It had to run on static hosting alone, so the only thing to host is the page itself. Each person using it brings their own API keys and their own storage, so their work
+      stays in accounts they control.
+    </p>
+    <p>
+      It had to be shareable. Someone else can run their own copy, with their own keys, without
+      touching the author's storage or workspace. That also means the public repository holds only
+      code: every key, database identifier and personal value lives in runtime settings instead.
+    </p>
+    <p>
+      It had to work across two machines in daily use, so files and history sync rather than living
+      on whichever laptop was open. And of the three APIs it talks to, one accepts browser origins
+      only through a server, which shaped the one piece of infrastructure the project has.
+    </p>
+
+    <h2>Approach</h2>
+    <ol>
+      <li>Keep everything client-side that safely can be, and introduce a server only where an API forces it.</li>
+      <li>Move every user-specific value out of code and into a settings panel backed by local storage, so the published source is generic.</li>
+      <li>Where a proxy is unavoidable, treat it as a security boundary rather than a pass-through.</li>
+      <li>Stream responses rather than waiting, because a wall of text arriving at once is a different product.</li>
+    </ol>
+    <figure class="fig"><svg viewBox="0 0 600 132" role="img" aria-label="A single HTML file in the browser calls the model API directly, Drive directly, and Notion through a Worker that holds the token."><defs><marker id="s1" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="10" y="46" width="104" height="42" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="62.0" y="65.0" fill="var(--text-strong)">index.html</text><text x="62.0" y="78.0" fill="var(--text-dim)" font-size="8.5">one file, no build</text><path d="M116 50 H164" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#s1)"/><path d="M116 67 H164" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#s1)"/><path d="M116 84 H164" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#s1)"/><rect x="168" y="10" width="132" height="30" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="234.0" y="23.0" fill="var(--text-strong)">Messages API</text><text x="234.0" y="36.0" fill="var(--text-dim)" font-size="8.5">SSE stream</text><rect x="168" y="52" width="132" height="30" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="234.0" y="65.0" fill="var(--text-strong)">Drive API</text><text x="234.0" y="78.0" fill="var(--text-dim)" font-size="8.5">drive.file</text><rect x="168" y="94" width="132" height="30" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="234.0" y="107.0" fill="var(--text-strong)">Worker</text><text x="234.0" y="120.0" fill="var(--text-dim)" font-size="8.5">token held here</text><path d="M302 109 H344" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#s1)"/><rect x="348" y="94" width="120" height="30" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="408.0" y="112.5" fill="var(--text-strong)">Notion API</text><text x="408" y="82" fill="var(--pink)" font-size="8.5">browser CORS blocked</text><rect x="478" y="52" width="112" height="30" rx="6" fill="none" stroke="var(--text-dim)" stroke-width="1.4"/><text x="534.0" y="70.5" fill="var(--text-strong)">localStorage</text><path d="M116 67 H472" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#s1)"/></g></svg></figure>
+
+    <h2>Implementation</h2>
+
+    <h3>Streaming</h3>
+    <p>
+      The model API is called directly from the browser with <code>stream: true</code>. The
+      response is a server-sent event stream read chunk by chunk, with the message re-rendered
+      on every <code>content_block_delta</code>. Conversation history is held in memory and
+      replayed with each request.
+    </p>
+    <p>
+      The first version returned everything at once. The fix was not in the interface, it was in
+      the system prompt: one question per turn, wait for the answer, react to what was actually
+      said, three to five lines. That single change turned a document generator into a dialogue,
+      and it is the highest-leverage part of the build.
+    </p>
+
+    <h3>The proxy, and why it exists</h3>
+    <p>
+      One of the three APIs rejects browser origins entirely, so a proxy is not a design
+      preference, it is the only route. Given a server had to exist, it took on the job the
+      browser cannot do safely: <strong>holding the token</strong>. That value never reaches the
+      client.
+    </p>
+    <p>The proxy is locked three ways rather than one:</p>
+    <table>
+      <thead><tr><th>Control</th><th>What it stops</th></tr></thead>
+      <tbody>
+        <tr><td>Origin allowlist</td><td>Calls from any page other than the deployed app</td></tr>
+        <tr><td>Shared key header</td><td>Calls from anyone who guesses the URL</td></tr>
+        <tr><td>Route allowlist, three patterns</td><td>A leaked URL being used to read or delete anything else in the workspace</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      The route allowlist is the one worth arguing for. Origin and key checks protect the
+      endpoint. The route allowlist limits the blast radius if both are defeated, because the
+      proxy can only ever perform the three operations the app actually needs.
+    </p>
+
+    <h3>Scoped storage access</h3>
+    <p>
+      Images attach as base64 blocks, so a photographed page of a book can be read and explained
+      rather than retyped. Cloud sync uses the narrowest available scope, which grants access only
+      to files the application itself created rather than the user's whole drive. On first connection it
+      provisions a folder tree and caches the folder identifiers, then routes uploads by
+      filename convention.
+    </p>
+
+    <h3>Keys in the browser, stated plainly</h3>
+    <p>
+      A model API key used from a browser is visible to whoever controls that browser. That is
+      acceptable here only because each user supplies their own key against their own billing,
+      and the documentation says so directly rather than leaving the reader to work it out.
+    </p>
+
+    <div class="shots">
+      <figure class="shot"><img src="shots/dm-study-agent-chat.jpg" alt="Streaming chat. Responses render token by token off the event stream, " loading="lazy"><figcaption>Streaming chat. Responses render token by token off the event stream, with file attachments and the log-to-workspace action in the header.</figcaption></figure>
+    </div>
+
+    <h2>Result</h2>
+    <ul>
+      <li>Three services integrated from a static page, with a server introduced only where an API left no alternative.</li>
+      <li>The public repository contains no secret of any kind. A later refactor moved every remaining personal value into runtime settings.</li>
+      <li>The one credential that cannot be exposed lives server-side, behind three independent controls.</li>
+    </ul>
+
+  </main>
+</div></body></html>

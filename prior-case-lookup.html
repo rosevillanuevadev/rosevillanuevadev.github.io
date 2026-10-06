@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Searchable KB wired into the troubleshooting workflow, Rose Villanueva</title>
+<meta name="description" content="A retrieval layer built from support notes the workflow already produced, wired above the investigation step so consulting prior work is the default rather than a choice made under time pressure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">Searchable KB wired into the troubleshooting workflow</h1>
+    <div class="paper-meta"><span>Live ticket &rarr; AI assists and documents it &rarr; KB &rarr; searched at the start of the next one</span></div>
+    <h2>Stack</h2>
+    <div class="chips stack-row"><span class="chip">Claude Code skills</span><span class="chip">MCP</span><span class="chip">Zendesk</span><span class="chip">Python</span><span class="chip">Standard library only</span><span class="chip">Markdown corpus</span><span class="chip">JSON index</span></div>
+    <p>
+      Technical support handled with an AI assistant that reads the live ticket, searches a knowledge
+      base of past interactions before troubleshooting starts, and documents the whole interaction as
+      it happens. Each completed case becomes a record in that knowledge base, so the system gets
+      better at answering with every ticket it handles.
+    </p>
+    <figure class="fig"><svg viewBox="0 0 600 214" role="img" aria-label="A live Zendesk ticket is read over MCP by a Claude skill, which searches the knowledge base first, assists the troubleshooting, and documents the whole interaction into a working doc named by ticket ID. That doc is added to the knowledge base, which the next ticket searches."><defs><marker id="kb" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="30" y="20" width="180" height="44" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="120.0" y="37" fill="var(--text-strong)">Zendesk</text><text x="120.0" y="50" fill="var(--text-dim)" font-size="8.5">the live ticket</text><rect x="350" y="20" width="200" height="44" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="450.0" y="37" fill="var(--text-strong)">Claude skill</text><text x="450.0" y="50" fill="var(--text-dim)" font-size="8.5">reads it live over MCP</text><rect x="30" y="150" width="180" height="44" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="120.0" y="167" fill="var(--text-strong)">Working doc</text><text x="120.0" y="180" fill="var(--text-dim)" font-size="8.5">one per ticket ID</text><rect x="350" y="150" width="200" height="44" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="450.0" y="167" fill="var(--text-strong)">Searchable KB</text><text x="450.0" y="180" fill="var(--text-dim)" font-size="8.5">211 resolved interactions</text><path d="M210 42 H346" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#kb)"/><path d="M400 64 V112 H120 V146" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#kb)"/><text x="262" y="106" fill="var(--text-dim)" font-size="8.5" text-anchor="middle">documents the whole interaction</text><path d="M210 172 H346" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#kb)"/><text x="278" y="166" fill="var(--text-dim)" font-size="8.5" text-anchor="middle">added to the KB</text><path d="M500 150 V68" fill="none" stroke="var(--text-dim)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#kb)"/><text x="508" y="110" fill="var(--text-dim)" font-size="8.5" text-anchor="start">searched first</text></g></svg></figure>
+    <h2>Project scope</h2>
+    <p>
+      A support engineer working technical tickets solves the same shapes of problem repeatedly.
+      Internal guides cover documented procedures. What they leave out is the specific case seen
+      five weeks ago on a different site, including the order things were ruled out in. Keeping
+      that history searchable turns every ticket already resolved into an answer for the next one.
+    </p>
+
+    <h2>Constraints</h2>
+    <p>
+      It had to fit inside live handling. A support engineer is mid-conversation with a customer,
+      so anything that asks for extra steps afterward would stay empty.
+    </p>
+    <p>
+      The records are real support interactions, so they had to be safe to search: user data
+      stripped before anything is indexed.
+    </p>
+    <p>
+      Accuracy mattered more than volume. A match shapes where an investigation goes next, so the
+      system surfaces only cases it can stand behind, and presents each one as a starting point to
+      confirm.
+    </p>
+
+    <h2>Approach</h2>
+    <p>
+      Two Claude skills run during the interaction itself. The engineer opens one with the Zendesk
+      link, and it reads the conversation live over MCP. Before any troubleshooting is proposed, it
+      searches the knowledge base for cases with the same symptom.
+    </p>
+    <p>
+      From there it works the ticket alongside the engineer, and documents as it goes. Every check
+      run, every response sent, the full order of elimination, written into a working doc named by
+      ticket ID. The documentation is produced by the assistant during the interaction, not written
+      up by a person afterward, so a record is complete and identically structured every time.
+    </p>
+    <p>
+      Completed docs become the knowledge base. The corpus fills itself from the work, which is why
+      the search at step one keeps getting more useful.
+    </p>
+
+    <h2>Implementation</h2>
+
+    <h3>Precision over coverage</h3>
+    <p>
+      A first parser produced 171 records. A stricter one produced 165, each cleanly carrying the
+      symptom. Keeping the smaller, cleaner set was deliberate: a match an engineer can trust is
+      worth more than a bigger index.
+    </p>
+
+    <h3>Filed by symptom, not by site</h3>
+    <p>
+      Each case is filed under its symptom, with product folders at the top level. A case touching
+      two products is filed under both, and 66 of the 165 are cross-filed that way. A new site
+      showing a familiar symptom is exactly the case worth catching, so the symptom is the key.
+    </p>
+
+    <h3>The lookup runs on every investigation</h3>
+    <p>
+      The value is in the search happening before a plan is proposed, so it is wired into three
+      troubleshooting entry points across two accounts, plus the global instruction file that loads
+      in every session. Six skill files and two instruction files carry it, so it runs whether or
+      not a skill is explicitly invoked.
+    </p>
+
+    <h3>Every answer is checkable</h3>
+    <p>
+      A match comes back as site, date and cause in one or two lines, framed as a hypothesis to
+      confirm against the live ticket. It carries the elimination order as well as the answer,
+      because what was ruled out is where the time went. A search that returns nothing prints a
+      receipt line, so the engineer always knows the search ran and what it found.
+    </p>
+
+    <h3>Scrubbed at build time</h3>
+    <p>
+      Emails, IP addresses and usernames are stripped as the corpus is generated, rather than in a
+      later pass. Verification after hardening the scrubber produced 13 redactions. Site identifiers
+      and ticket IDs are the only identifiers kept, which is what keeps a case recognizable while
+      the index stays free of user data.
+    </p>
+
+    <h2>Result</h2>
+    <p>
+      Built in a single session on the Python standard library alone, with a 179 line generator. The
+      knowledge base has grown from 165 cases at build to 211 on its own, purely as a by-product of
+      tickets being handled. The lookup fires from every troubleshooting entry point across both
+      accounts.
+    </p>
+
+    <h2>What transfers</h2>
+    <p>
+      The pattern carries to any support practice where an assistant sits in the live interaction.
+      Three parts travel: have the assistant document the interaction as it happens so the corpus
+      builds itself, put the search above the investigation step so it runs by default, and return a
+      match as a hypothesis with the elimination order attached, so it can be confirmed in seconds.
+    </p>
+
+  </main>
+</div>
+</body>
+</html>

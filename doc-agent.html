@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-tier instruction design for a documentation agent, Rose Villanueva</title>
+<meta name="description" content="An agent for building reference guides, built by correction rather than specification. Its most transferable finding is how its own rules silently disappeared across rewrites and diverging copies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">Two-tier instruction design for a documentation agent</h1>
+    <div class="paper-meta"><span>Built by correction</span><span>Two-tier instructions</span></div>
+    <p>
+      An agent for building and auditing reference guides, built by correction rather than by
+      specification: every fix made on a real guide became a rule in its instructions. The most
+      transferable finding is not the guides. It is watching its own rules silently disappear
+      across rewrites and diverging copies.
+    </p>
+    <figure class="fig"><svg viewBox="0 0 600 176" role="img" aria-label="A guide is built, a correction is raised on the real guide, the correction becomes a rule in a two-tier instruction set, and the next guide inherits it. The observed failure is rules disappearing when the agent rewrites its own instructions."><defs><marker id="d1" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="30" y="18" width="140" height="34" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="100" y="40" fill="var(--text-strong)">build a guide</text><path d="M170 35 H216" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#d1)"/><rect x="220" y="18" width="170" height="34" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="305" y="34" fill="var(--text-strong)">correction raised</text><text x="305" y="46" fill="var(--text-dim)" font-size="8.5">on a real guide</text><path d="M390 35 H436" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#d1)"/><rect x="440" y="18" width="140" height="34" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="510" y="40" fill="var(--text-strong)">becomes a rule</text><path d="M510 52 V90" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#d1)"/><rect x="380" y="92" width="200" height="44" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="480" y="110" fill="var(--text-strong)">long instruction file</text><text x="480" y="125" fill="var(--text-strong)">+ pre-response checklist</text><path d="M380 114 H100 V56" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#d1)"/><text x="228" y="106" fill="var(--text-dim)" font-size="8.5">next guide inherits it</text><text x="228" y="158" fill="var(--pink)" font-size="8.5">observed failure: a rule vanishes when the agent rewrites</text><text x="228" y="169" fill="var(--pink)" font-size="8.5">its own instructions, and two copies drift apart</text></g></svg></figure>
+    <h2>Project scope</h2>
+    <p>
+      An agent for building and auditing reference guides used by outsourced partner support
+      teams. Those teams work from a separate set of guides and cannot open several internal
+      sources, so a guide has to be researched from places the reader cannot reach and then
+      written to stand on its own.
+    </p>
+    <p>
+      The guides had grown by topic over time. One topic alone had 31 pages. Someone handling a
+      live interaction had to know which page applied and whether it was still current.
+    </p>
+    <h2>Constraints</h2>
+    <p>Writing one guide is four separate jobs, and only one of them is writing:</p>
+    <ul>
+      <li>Research across sources the reader cannot see.</li>
+      <li>A structure that works for an adult learner mid-interaction, not a reference index.</li>
+      <li>A scope decision on every step: what the reader can handle, investigate, or must escalate.</li>
+      <li>Wording that matches a house writing standard.</li>
+    </ul>
+    <p>
+      Every guide was built by hand, and the rules for doing it well lived in one person's
+      practice rather than in anything written down.
+    </p>
+    <h2>Approach</h2>
+    <p>
+      The first brief set the audience, the tools the reader has, and a set of tone rules.
+      After that, each guide was a working session, and <strong>every correction made during a
+      guide was carried forward into the instructions</strong>. The agent was built by
+      correction rather than by specification.
+    </p>
+    <table>
+      <thead><tr><th>Correction</th><th>Rule it became</th></tr></thead>
+      <tbody>
+        <tr><td>An inference presented as fact</td><td>Every factual claim sourced, gaps flagged explicitly</td></tr>
+        <tr><td>The word "simple" in a step</td><td>"simple", "easy" and "just" banned</td></tr>
+        <tr><td>A link to a source the reader cannot open</td><td>Used for accuracy, never linked</td></tr>
+        <tr><td>"response scripts"</td><td>House terminology enforced</td></tr>
+        <tr><td>A 31-page topic flattened into one page</td><td>Subpages by subtopic, tools placed per subpage</td></tr>
+        <tr><td>A tester assumed a tracker issue was required</td><td>Made optional, lookup request type added</td></tr>
+      </tbody>
+    </table>
+    <h2>Implementation</h2>
+    <h3>Two-tier instructions</h3>
+    <p>
+      When the hosted thread broke repeatedly under the weight of the instructions, they were
+      moved into a dedicated agent and split into two tiers: a long file the agent reads for
+      context, and a short checklist of rules it must verify before every response. The split
+      exists because a rule buried in a long document is not a rule that gets applied under
+      generation pressure.
+    </p>
+    <h3>Porting to a local skill</h3>
+    <p>
+      The port to a local agent framework removed the workarounds that existed only to survive
+      thread limits, and added three things: live research tools, visuals embedded directly in
+      the guide, and a publish step placed behind an explicit gate rather than run
+      automatically.
+    </p>
+    <h2>Result</h2>
+    <ul>
+      <li>Published guides across six topics, including one parent page with eight subpages replacing a sprawling topic, and a five-page product suite.</li>
+      <li>Audits with neutral tracker comments for three topics, plus 40 working files and visuals.</li>
+      <li>Published setup: instructions, the checklist, a changelog and a README, so others can stand the agent up themselves.</li>
+      <li>A lead tested it and found a friction point, which was changed two days later. The documentation owner said it would make building guides faster and planned to use it.</li>
+    </ul>
+    <h2>What the failures taught, which is the part worth keeping</h2>
+    <ul>
+      <li><strong>Rules can be lost when an agent rewrites its own instructions.</strong> A neutral-framing rule was added, then disappeared between two versions. It was raised again months later and saved outside the agent instead. The same happened to two other rules during the first rewrite.</li>
+      <li><strong>Instructions maintained in several places drift apart.</strong> The published copy stopped being updated, and two working copies have diverged since. A bulk edit removed the title and role line from one copy only, and that went unnoticed for nearly three weeks.</li>
+      <li><strong>The rules that lasted were the ones traceable to a single named correction on a real guide.</strong> Rules invented in the abstract did not survive.</li>
+    </ul>
+    <p class="note">
+      <strong>The generalizable finding.</strong> An agent whose behavior lives in editable
+      instructions has no mechanism preventing silent regression. Version control on the
+      instruction file is not optional infrastructure, it is the only thing that makes the
+      agent's behavior reproducible, and a single source of truth matters more than the quality
+      of any individual rule.
+    </p>
+    <h2>Stack</h2>
+    <div class="chips"><span class="chip">Claude Code skills</span><span class="chip">LibreChat</span><span class="chip">Two-tier instruction design</span><span class="chip">HTML</span></div>
+
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geospatial pathfinding service in Python, Rose Villanueva</title>
+<meta name="description" content="A route distance calculator for open water swims. Routes around land, validates every leg, and stores the path behind each published figure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ==================== PAPER ==================== -->
+  <main class="main-col paper">
+
+    <a href="index.html" class="crumb">&larr; Work</a>
+
+    <h1 class="paper-title">Route distance calculator for open water swims with Python</h1>
+    <div class="links-row">
+      <a class="lnk repo" href="https://github.com/rosevillanuevadev/wowsa-distance-calculator" target="_blank" rel="noopener">Repository</a>
+      <a class="lnk doc" href="https://github.com/rosevillanuevadev/wowsa-distance-calculator/blob/main/METHODOLOGY.md" target="_blank" rel="noopener">Methodology</a>
+      <a class="lnk repo" href="https://github.com/rosevillanuevadev/searoute-py" target="_blank" rel="noopener">Forked router</a>
+    </div>
+    <h2>Stack</h2>
+    <div class="chips stack-row"><span class="chip">Python 3</span><span class="chip">searoute-py (forked)</span><span class="chip">shapely</span><span class="chip">pyproj</span><span class="chip">numpy</span><span class="chip">gpxpy</span><span class="chip">global-land-mask</span><span class="chip">Flask</span><span class="chip">psycopg2</span><span class="chip">PostgreSQL</span><span class="chip">Google Maps JS API</span><span class="chip">Railway</span></div>
+
+    <p>
+      A service that computes the shortest sea route between two coordinates without crossing
+      land, for a swim that has not happened yet. It measures a planned route at approval
+      time, before anyone gets in the water. It replaces
+      unqualified great-circle distance, which is wrong for any route with land between its
+      endpoints,
+      and it produces a figure that can be recomputed and defended when a swimmer disputes
+      it.
+    </p>
+
+    <h2>Project scope</h2>
+    <p>
+      Swim distances were being certified using straight-line distance between the start
+      and finish coordinates. That number is only correct when the entire path is open
+      water. For a crossing that must go around a headland, an island, or into a bay, it
+      understates the real distance, and for a route measured point to point across a
+      curving coast it can overstate it.
+    </p>
+    <p>
+      Circumnavigations had no method at all. Distances were produced by dragging a path
+      around the landmass by hand and reading off the total. Two people doing that on the
+      same island would not get the same number, and there was no record of where the path
+      had been placed or why.
+    </p>
+    <p>
+      These figures are published, and they are contested. A record distance that cannot
+      be reconstructed from its inputs cannot be defended.
+    </p>
+
+    <h2>Constraints</h2>
+    <ul>
+      <li>
+        Any published figure has to be reproducible. Given the same inputs and the same
+        recorded method, the number must come out the same.
+      </li>
+      <li>
+        No budget for commercial bathymetry or routing data.
+      </li>
+      <li>
+        The only viable open routing library, <code>searoute-py</code>, is built for
+        commercial shipping. Its network has no coverage in narrow gulfs, inland seas or
+        lakes, which is exactly where a lot of these swims happen.
+      </li>
+      <li>
+        The output has to be legible to a ratification committee, not only to me.
+      </li>
+    </ul>
+
+    <h2>Approach</h2>
+    <ol>
+      <li>
+        Route over a maritime network instead of drawing a straight line, so the path
+        avoids land by construction.
+      </li>
+      <li>
+        Treat the router as unreliable. Validate every leg it returns against an
+        independent calculation, and fall back deterministically when it fails.
+      </li>
+      <li>
+        Decompose closed loops into legs between waypoints, so a circumnavigation is a sum
+        of verifiable segments rather than one opaque number.
+      </li>
+      <li>
+        Generate candidate waypoints automatically, but require a human to confirm each one
+        before any distance is computed from them.
+      </li>
+      <li>
+        Record the method used per leg, so the output states how it was derived rather than
+        just what it came to.
+      </li>
+    </ol>
+
+    <h2>Implementation</h2>
+
+    <h3>Leg validation</h3>
+    <p>
+      Every call to the router is checked against the haversine distance between the same
+      two points before it is accepted. A leg is rejected and replaced with the
+      straight-line calculation if any of the following hold:
+    </p>
+    <table>
+      <thead><tr><th>Condition</th><th>What it catches</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Distance is 0, or the path has one point or fewer</td>
+          <td>Router found nothing and returned a degenerate result</td>
+        </tr>
+        <tr>
+          <td>Start or end of the returned path is more than 20&nbsp;km from the requested coordinate</td>
+          <td>Router snapped to a distant shipping lane instead of the actual point</td>
+        </tr>
+        <tr>
+          <td>Routed distance is more than 4&times; the haversine distance</td>
+          <td>Router took a commercial detour, common in narrow gulfs</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Each leg carries a <code>method</code> field recording whether it came from the
+      router or the fallback, and the result includes a plain-language warning naming every
+      leg that fell back and why. The total stays valid because an open water swim in an
+      area with no sea lanes is measured as straight-line segments between waypoints
+      anyway, but the reader is told which legs those were.
+    </p>
+
+
+    <figure class="fig"><svg viewBox="0 0 600 240" role="img" aria-label="Start and end coordinates go to a Python step that proposes waypoints, which a person confirms on a Google Map. searoute-py routes each leg, three checks validate it, and a failed leg falls back to a straight-line haversine distance. Flask on Railway serves the result and PostgreSQL stores the route with its full path."><defs><marker id="reg" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="16" y="14" width="118" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="75.0" y="29" fill="var(--text-strong)">Coordinates</text><text x="75.0" y="41" fill="var(--text-dim)" font-size="8.5">start and end</text><rect x="174" y="14" width="126" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="237.0" y="29" fill="var(--text-strong)">Python</text><text x="237.0" y="41" fill="var(--text-dim)" font-size="8.5">propose waypoints</text><rect x="340" y="14" width="134" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="407.0" y="29" fill="var(--text-strong)">Google Maps</text><text x="407.0" y="41" fill="var(--text-dim)" font-size="8.5">confirm on a map</text><path d="M134 32 H170" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/><path d="M300 32 H336" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/><path d="M407 50 V92" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/><rect x="340" y="96" width="134" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="407.0" y="111" fill="var(--text-strong)">searoute-py</text><text x="407.0" y="123" fill="var(--text-dim)" font-size="8.5">route each leg</text><rect x="174" y="96" width="126" height="36" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="237.0" y="111" fill="var(--text-strong)">three checks</text><text x="237.0" y="123" fill="var(--text-dim)" font-size="8.5">validate the leg</text><rect x="16" y="96" width="118" height="36" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="75.0" y="111" fill="var(--text-strong)">haversine</text><text x="75.0" y="123" fill="var(--text-dim)" font-size="8.5">straight line</text><path d="M340 114 H304" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/><path d="M174 114 H138" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/><text x="306" y="108" fill="var(--text-dim)" font-size="8.5">then</text><text x="140" y="108" fill="var(--text-dim)" font-size="8.5">fails</text><path d="M237 132 V150 H330 V136" fill="none" stroke="var(--text-dim)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#reg)"/><text x="246" y="146" fill="var(--text-dim)" font-size="8.5">passes</text><path d="M407 132 V186" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/><rect x="340" y="190" width="134" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="407.0" y="205" fill="var(--text-strong)">Flask on Railway</text><text x="407.0" y="217" fill="var(--text-dim)" font-size="8.5">serve the result</text><rect x="150" y="190" width="150" height="36" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="225.0" y="205" fill="var(--text-strong)">PostgreSQL</text><text x="225.0" y="217" fill="var(--text-dim)" font-size="8.5">store route and path</text><path d="M340 208 H304" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#reg)"/></g></svg></figure>
+
+    <h3>Waypoint confirmation gate</h3>
+    <p>
+      Waypoints for a circumnavigation are proposed by a model, which is fast but will
+      occasionally place a point on land or inside a harbor wall. Those are not errors you
+      catch by looking at a total.
+    </p>
+    <p>
+      So the proposal step and the calculation step are separate programs. The first renders
+      every candidate as a numbered marker on a map for inspection. The second refuses to
+      run unless the waypoint file has been renamed to mark it confirmed, and prompts for
+      explicit confirmation if it has not:
+    </p>
+    <pre><code>if "locked" not in wp_path.name:
+    print("Warning: waypoints file name does not contain 'locked'.")
+    print("  Run propose-waypoints.py first to verify waypoints.")
+    confirm = input("  Continue anyway? (yes/no): ").strip().lower()
+    if confirm != "yes":
+        sys.exit(0)</code></pre>
+    <p class="note">
+      The rename is the audit trail. A file called <code>locked-manhattan-waypoints.json</code>
+      is a statement that a person looked at every point on a map.
+    </p>
+
+    <h3>Loop closure and assembly</h3>
+    <p>
+      The waypoint list is closed by appending the first point to the end, then walked
+      pairwise. Distances are summed and the returned coordinate arrays are concatenated
+      with the duplicate join point dropped at each boundary, producing one continuous
+      polyline for rendering. Results are written as JSON with a UTC timestamp, the source
+      waypoint filename, the per-leg breakdown and the waypoints used.
+    </p>
+
+
+    <h3>What gets stored</h3>
+    <p>
+      Every computed route is written to PostgreSQL, not just returned. Point to point swims go to
+      one table, circumnavigations to another, each row holding the coordinates, the distance in
+      kilometers and miles, any warning raised during validation, and the full path as JSON.
+      Circumnavigation rows also keep the waypoints the route was built from.
+    </p>
+    <p>
+      Storing the path alongside the number is what makes the figure defensible later. A disputed
+      distance can be pulled up and inspected as the geometry that produced it, rather than
+      recalculated from scratch and hoped to match.
+    </p>
+
+    <h2>Result</h2>
+    <p>
+      Published distances are reproducible from their inputs, and the method used for each segment
+      is part of the record. A reader can see which legs came from the router and which fell back,
+      rather than being handed a single total.
+    </p>
+    <p>
+      Every run records the offshore buffer it was computed at, so a figure traces back to the
+      named parameter that produced it and can be recomputed at a different setting during review.
+      On one circumnavigation of roughly 1,500 km, that made the difference between two runs
+      attributable to one recorded value.
+    </p>
+    <p>
+      Circumnavigation routes are stored with their waypoints and path, so a later attempt on the
+      same island is measured against a recorded baseline rather than a fresh hand-drawn path.
+    </p>
+
+  </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staged approval pipeline on PostgreSQL, Rose Villanueva</title>
+<meta name="description" content="Replacing a 44-step manual certification process, spread across six systems and tracked by hand, with a pipeline that holds its own state and applies a fixed decision rule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">Staged approval pipeline on PostgreSQL</h1>
+    <div class="links-row">
+      <a class="lnk repo" href="https://github.com/rosevillanuevadev/wowsa-ratifications" target="_blank" rel="noopener">Forensic record</a>
+    </div>
+    <div class="paper-meta"><span>PostgreSQL, web app</span><span>In production</span></div>
+    <p>Replacing a 44-step manual certification process, spread across six systems and tracked by hand, with a pipeline that holds its own state and applies a fixed decision rule.</p>
+    <figure class="fig"><svg viewBox="0 0 600 132" role="img" aria-label="Intake, evidence, committee review with a fixed decision rule, then determination and publication."><defs><marker id="g2" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="16" y="48" width="96" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="64.0" y="69.5" fill="var(--text-strong)">intake</text><path d="M114 66 H130" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g2)"/><rect x="134" y="48" width="96" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="182.0" y="69.5" fill="var(--text-strong)">evidence</text><path d="M232 66 H248" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g2)"/><rect x="252" y="48" width="96" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="300.0" y="69.5" fill="var(--text-strong)">review</text><path d="M350 66 H366" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g2)"/><rect x="370" y="48" width="96" height="36" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="418.0" y="69.5" fill="var(--text-strong)">decision</text><path d="M468 66 H484" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g2)"/><rect x="488" y="48" width="96" height="36" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="536.0" y="69.5" fill="var(--text-strong)">publish</text><rect x="16" y="8" width="568" height="26" rx="6" fill="none" stroke="var(--text-dim)" stroke-width="1.4"/><text x="300.0" y="24.5" fill="var(--text-strong)">Postgres, logic in database functions</text><text x="300" y="112" fill="var(--text-dim)" font-size="8.5">fixed decision rule &#183; auditable state per application</text></g></svg></figure>
+    <h2>Project scope</h2>
+    <p>
+      Certifying an open water swim record ran through a shared inbox. I mapped the process
+      as it actually existed before proposing anything: <strong>44 steps across six
+      systems</strong>, with a tracker updated by hand at every stage that nothing wrote to
+      automatically.
+    </p>
+    <p>
+      The audit surfaced what the process could not tell you. Three branches ended the
+      workflow with no route back in. One form required a single field, and it was not the
+      evidence. Nothing advanced unless a person noticed it should, which meant applicants
+      who had paid and finished their swim could sit indefinitely with no status to give
+      them.
+    </p>
+    <h2>Constraints</h2>
+    <ul>
+      <li>Live process with paying applicants throughout. No stop-the-world cutover.</li>
+      <li>Decisions are contested publicly, so every determination has to be reconstructable.</li>
+      <li>A volunteer review committee, so the system has to work for people who use it a few times a year.</li>
+    </ul>
+    <h2>Approach</h2>
+    <ol>
+      <li>Map the existing process completely before designing anything, including the parts nobody would have mentioned.</li>
+      <li>Give the pipeline its own state, so progress is a property of the record rather than of someone remembering.</li>
+      <li>Fix the decision rule in the system instead of leaving it to whoever responds first.</li>
+      <li>Hold the logic in the database rather than the application, so it cannot be bypassed by a different client.</li>
+    </ol>
+    <h2>Implementation</h2>
+    <h3>State in the record</h3>
+    <p>
+      Intake, evidence collection, review, determination and publication are explicit states
+      on the application rather than stages in someone's head. An application always has a
+      status, which means an applicant can always be told where they are.
+    </p>
+    <h3>Logic in database functions</h3>
+    <p>
+      The decision rule lives in Postgres functions rather than in the front end. A
+      determination is produced the same way regardless of what calls it, and the path from
+      evidence to outcome is inspectable after the fact.
+    </p>
+    <h3>Committee review</h3>
+    <p>
+      Reviewers read the full application rather than a summary and submit their
+      determination from it. Reviews are counted against a fixed rule instead of closing
+      whenever enough replies arrive.
+    </p>
+    <h2>Result</h2>
+    <ul>
+      <li>Every application has a status that can be stated without asking anyone.</li>
+      <li>Determinations are reconstructable from the record, which matters when one is challenged.</li>
+      <li>The audit of the old process is itself a deliverable, and documented the failure points that justified the rebuild.</li>
+    </ul>
+    <h2>Stack</h2>
+    <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">Database functions</span><span class="chip">Lovable</span><span class="chip">Supabase</span><span class="chip">Jotform</span><span class="chip">Airtable</span><span class="chip">Cloudflare</span></div>
+
+  </main>
+</div>
+</body>
+</html>

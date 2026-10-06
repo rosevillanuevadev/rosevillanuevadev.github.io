@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schema discovery and migration into Airtable, Rose Villanueva</title>
+<meta name="description" content="Mapping ten thousand records out of WordPress post meta by counting how often each field is actually used, which is what separated real data from a decade of residue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=338d6084">
+</head>
+<body>
+<div class="layout">
+  <aside class="aside">
+    <div class="avatar"><img src="avatar.png" alt="Rose Villanueva speaking at a conference"></div>
+    <a class="side-name" href="index.html">Rose Villanueva</a>
+    <p class="side-sub">Integration &amp; Automation Engineer</p>
+
+    <div class="side-block">
+      <p class="side-label">About</p>
+      <p>
+        I build the integration layer that makes a company's platforms behave like one system.
+        Platforms that have to talk to each other, data that has to move without losing anything,
+        and AI that has to be right before anyone acts on it. I am usually the only technical
+        person on the account, so I own the decision as well as the build.
+      </p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Stack</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Webhooks</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">RAG</span>
+        <span class="chip">MCP</span>
+        <span class="chip">Evals</span>
+        <span class="chip">Cloudflare Workers</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Git</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I do</p>
+      <ul class="side-rows">
+        <li>Automate work that repeats, end to end</li>
+        <li>Connect platforms never built to talk to each other</li>
+        <li>Move and clean data without losing anything</li>
+        <li>Design LLM agents, RAG retrieval and the instruction sets behind them</li>
+        <li>Apply instructional design to systems people have to learn</li>
+        <li>Document systems so a team can run them without me</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">What I build</p>
+      <ul class="side-rows">
+        <li>LLM agents, MCP servers, skills and RAG retrieval layers</li>
+        <li>Data pipelines and scheduled jobs</li>
+        <li>Courses and the platforms that deliver them</li>
+        <li>Directory and membership platforms</li>
+        <li>Approval and review workflows</li>
+        <li>Email lifecycle and outreach automation</li>
+        <li>Internal tools and admin sites</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <ul class="side-rows">
+        <li><a href="https://github.com/rosevillanuevadev">github.com/rosevillanuevadev</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Speaking</p>
+      <ul class="side-rows speaking">
+        <li>Support Driven Expo <span>Chicago</span></li>
+        <li>WordCamp Vienna <span>Austria</span></li>
+        <li>WooCommerce Workshop <span>Singapore</span></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main-col paper">
+    <a href="index.html" class="crumb">&larr; Work</a>
+    <h1 class="paper-title">Schema discovery and migration into Airtable</h1>
+    <div class="paper-meta"><span>10,063 records</span><span>Field level map</span></div>
+    <p>Mapping ten thousand records out of WordPress post meta by counting how often each field is actually used, which is what separated real data from a decade of residue.</p>
+    <figure class="fig"><svg viewBox="0 0 600 132" role="img" aria-label="Every meta key in use is counted, and the frequency separates real data from residue."><defs><marker id="g7" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><polygon points="0,0 10,4 0,8" fill="var(--text-dim)"/></marker></defs><g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" text-anchor="middle"><rect x="14" y="48" width="104" height="36" rx="6" fill="none" stroke="var(--blue)" stroke-width="1.4"/><text x="66.0" y="69.5" fill="var(--text-strong)">10,063 recs</text><path d="M120 66 H158" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g7)"/><rect x="162" y="48" width="116" height="36" rx="6" fill="none" stroke="var(--violet)" stroke-width="1.4"/><text x="220.0" y="64.0" fill="var(--text-strong)">count usage</text><text x="220.0" y="77.0" fill="var(--text-dim)" font-size="8.5">per field</text><path d="M280 66 H318" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g7)"/><polygon points="334,46 426,46 438,66.0 426,86 334,86 322,66.0" fill="none" stroke="var(--violet)" stroke-width="1.6"/><text x="380.0" y="69.5" fill="var(--text-strong)">frequency</text><path d="M440 58 H484" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g7)"/><path d="M440 78 H484" fill="none" stroke="var(--text-dim)" stroke-width="1.3" marker-end="url(#g7)"/><rect x="488" y="30" width="98" height="30" rx="6" fill="none" stroke="var(--teal)" stroke-width="1.4"/><text x="537.0" y="48.5" fill="var(--text-strong)">real</text><rect x="488" y="74" width="98" height="30" rx="6" fill="none" stroke="var(--pink)" stroke-width="1.4"/><text x="537.0" y="92.5" fill="var(--text-strong)">residue</text></g></svg></figure>
+    <h2>Project scope</h2>
+    <p>
+      6,152 swims, 3,894 swimmers, 17 associations. <strong>10,063 records</strong> held as
+      WordPress post meta, accumulated over years of theme changes, plugin installs and hand
+      entry.
+    </p>
+    <p>
+      The documented field list was not a reliable guide to what the data contained. Mapping
+      from it would have carried the residue across and missed the gaps.
+    </p>
+    <h2>Constraints</h2>
+    <ul>
+      <li>No trustworthy schema. Post meta has no enforced structure.</li>
+      <li>Silent loss is the failure mode. A missing field does not error, it just arrives empty.</li>
+      <li>Too many records to inspect individually.</li>
+    </ul>
+    <h2>Approach</h2>
+    <p>
+      Rather than mapping the documented fields, enumerate every meta key actually present
+      per post type and count how many records carry it. Frequency is the signal. A field on
+      every record is data. A field on a hundred records out of six thousand is something
+      else.
+    </p>
+    <h2>Implementation</h2>
+    <p>What the counts exposed:</p>
+    <ul>
+      <li><strong>Real fields against residue.</strong> Genuine data sat alongside keys left behind by editors, an SEO plugin and a retired theme.</li>
+      <li><strong>A coverage gap.</strong> 6,152 swims but only 6,149 carried a country value. Three records were missing it, and nothing would have reported that.</li>
+      <li><strong>Shadow fields were unusable.</strong> Underscore-prefixed duplicates existed but covered around a hundred records each, so none could serve as a fallback.</li>
+      <li><strong>Hand-entry drift.</strong> A field name with a stray space and different capitalization appeared exactly once, on a single record. Invisible in any field list.</li>
+      <li><strong>One table was almost entirely junk.</strong> 17 real records, each carrying twelve styling keys from a dead theme.</li>
+    </ul>
+    <p class="note">
+      The same method ran on a different system three months earlier. Enumerate what is
+      actually in use, count it, let frequency separate data from residue. That makes it a
+      technique rather than a one-off.
+    </p>
+    <h2>Result</h2>
+    <ul>
+      <li>Every field carried across was one confirmed in use, with a known record count.</li>
+      <li>The three incomplete records were found before migration rather than discovered afterwards.</li>
+      <li>A decade of styling residue stayed behind.</li>
+    </ul>
+    <h2>Stack</h2>
+    <div class="chips"><span class="chip">MySQL</span><span class="chip">WordPress post meta</span><span class="chip">Airtable</span><span class="chip">Python</span><span class="chip">CSV</span></div>
+
+  </main>
+</div>
+</body>
+</html>
